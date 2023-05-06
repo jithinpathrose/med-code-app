@@ -1,6 +1,7 @@
 package com.code.app.dto;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,15 +14,22 @@ import java.util.Date;
 @Setter
 @Builder
 @Entity
+@AllArgsConstructor
 public class MedCodeDetails {
 
 
-    @Id
-    private String code;
+    public MedCodeDetails() {
+        // No-argument constructor
+    }
+
+
 
     private String source;
 
     private String codeListCode;
+
+    @Id
+    private String code;
 
     private String displayValue;
 
@@ -31,5 +39,5 @@ public class MedCodeDetails {
 
     private Date toDate;
 
-    private int sortingPriority;
+    private Integer sortingPriority;
 }
